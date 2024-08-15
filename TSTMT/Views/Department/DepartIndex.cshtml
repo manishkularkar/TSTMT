@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "DepartIndex";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Pages/Department.js"></script>
+
+@*<h2>DepartIndex</h2>
+
+    <h3>Hello</h3>*@
+
+<section class="h-100 h-custom" style="background-color: #99A3A4;">
+    @*<div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-8 col-xl-6">
+                <div class="card rounded-3">
+                    <img src="~/Content/Img/t.png" height="200"
+                         class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+                         alt="Sample photo">*@
+    <div class="card-body p-4 p-md-5">
+        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Department Registration</h3>
+        <form class="px-md-2">
+            <input type="hidden" id="hdnId" />
+            <div class="form-outline mb-4">
+                <b> <label class="form-label" for="form3Example1q">Department Name</label></b>
+                <input type="text" id="txtDepartment" class="form-control" />
+            </div>
+
+            <button type="submit" class="btn btn-success btn-lg mb-1" onclick="SaveDepart()">Submit</button>
+        </form>
+    </div>
+    @*</div>
+                </div>
+            </div>
+        </div>*@
+</section>
+<br />
+
+<div>
+    <section>
+        <div>
+            <div class="card p-3">
+                <h3 class="card-title"> Show List</h3>
+
+                <div class="table-responsive">
+                    <table id="Department_mast" class="table table-bordered table-hover table-striped" style="width:100%;">
+                        <thead class="text-white bg-dark">
+                            <tr>
+                                <td class="text-white bg-dark">Department Id</td>
+                                <td class="text-white bg-dark">Department Name</td>
+                                <td class="text-white bg-dark">Edit</td>
+                                <td class="text-white bg-dark">Delete</td>
+                                <td class="text-white bg-dark">Detail</td>
+                            </tr>
+                        </thead>
+                        <tbody> </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+<div id="CategoryModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="container" id="Department_Detail">
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

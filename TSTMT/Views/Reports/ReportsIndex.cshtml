@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "ReportsIndex";
+}
+<script src="~/Content/Pages/Reports.js"></script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+
+<h2>ReportsIndex</h2>
+
+<html lang="en">
+<head>
+    <title>Combined Data Report</title>
+</head>
+<body>
+    <h2>Combined Data Report</h2>
+    @*<button id="fetchCombinedDataButton">Fetch Data</button>
+         Button to fetch combined data
+        <br />
+         Table to display the combined data*@
+    <div class="table-responsive">
+        <table id="Item_Transaction" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>Item Name</th>
+                    <th>Category</th>
+                    <th>Transaction Date</th>
+                    <th>Department Name</th>
+                    <th>Vendor Name</th>
+                    <th>Quantity</th>
+                    <th>Rate</th>
+                    <th>Balance Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                Data will be dynamically populated
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+
+
+
+<!-- CSS Links -->
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+<link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.css" rel="stylesheet" />
+ 
+<!-- DataTables JavaScript -->
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.4.2/js/buttons.html5.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#Item_Transaction').DataTable({
+            dom: 'Bfrtip',
+            buttons: [{
+                extend: 'pdf',
+                title: 'Stock Report',
+                filename: 'Stock Report'
+            }, {
+                extend: 'excel',
+                title: 'Customized EXCEL Title',
+                filename: 'Stock Report'
+            }, {
+                extend: 'csv',
+                filename: 'Stock Report'
+            }]
+        });
+    });
+</script>
+
+
